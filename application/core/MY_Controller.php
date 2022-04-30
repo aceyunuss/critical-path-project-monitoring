@@ -12,6 +12,7 @@ class Core_Controller extends CI_Controller
   {
 
     $dota['content'] = $view;
+    $dota['title'] = $title;
     $dota['site_title'] = "Project Monitoring - " . $title;
 
     $pass = array_merge($dota, $data);

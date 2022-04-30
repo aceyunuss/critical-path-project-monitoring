@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Flatlogic One HTML5 Dashboard - Visits</title>
+  <title>PM Tools - <?= $title ?></title>
   <link href="<?= base_url('assets/css/application.min.css') ?>" rel="stylesheet">
   <link href="<?= base_url('assets/css/owl.theme.green.min.css') ?>" rel="stylesheet">
   <link href="<?= base_url('assets/css/ine-awesome.css') ?>" rel="stylesheet">
@@ -24,23 +24,12 @@
     gtag('config', 'UA-36759672-9');
   </script>
 
-</head>
-
-<body class="">
-
-  <?php
-
-  include('v_header.php');
-  include('v_nav.php');
-  include('v_content.php');
-
-  ?>
-
-
 
   <!-- common libraries. required for every page-->
 
   <script src="<?= base_url('assets/js/jquery.min.js') ?> "></script>
+  <script src="<?= base_url('assets/js/tables/datatables.js') ?> "></script>
+
   <script src="<?= base_url('assets/js/jquery.pjax.js') ?> "></script>
   <script src="<?= base_url('assets/js/popper.js') ?> "></script>
   <script src="<?= base_url('assets/js/bootstrap.js') ?> "></script>
@@ -57,7 +46,20 @@
   <!-- Page scripts -->
   <script src="<?= base_url('assets/js/apexcharts.js') ?> "></script>
   <!-- page specific js -->
-  <script src="<?= base_url('js/dashboard/index.js') ?> "></script>
+
+
+</head>
+
+<body>
+
+  <?php
+
+  include('v_header.php');
+  include('v_nav.php');
+  include('v_content.php');
+
+  ?>
+
 </body>
 
 </html>
