@@ -6,7 +6,7 @@ class User extends Core_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(['Auth_m', 'M_user']);
+    $this->load->model(['M_user']);
 
     if ($this->session->userdata('status') != 'granted') {
       $this->session->sess_destroy();

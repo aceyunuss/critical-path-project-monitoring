@@ -20,7 +20,7 @@ class Core_Controller extends CI_Controller
     $this->load->view('v_template', $pass);
   }
 
-  public function ups($input)
+  public function upld($input)
   {
     $loc = $this->session->userdata("dir_upload");
 
@@ -54,9 +54,9 @@ class Core_Controller extends CI_Controller
   }
 
 
-  public function dop($folder = "", $subfolder = "", $file = "")
+  public function dwnld($folder = "", $file = "")
   {
-    $pth = str_replace("system\\", "", BASEPATH) . "uploads/" . $folder . "/" . $subfolder . "/" . $file;
+    $pth = str_replace("system\\", "", BASEPATH) . "uploads/" . $folder . "/"  . $file;
 
     if (file_exists($pth)) {
       $this->load->helper('download');
@@ -65,16 +65,5 @@ class Core_Controller extends CI_Controller
     } else {
       echo "<script>alert(\"File tidak ditemukan.\"); window.history.go(-1);</script>";
     }
-  }
-
-  function getClassCode($length)
-  {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-      $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
   }
 }
