@@ -8,7 +8,7 @@
     <h5 class="sidebar-nav-title">Master Data</h5>
     <ul class="sidebar-nav">
       <li class=" active ">
-        <a href="index.html">
+        <a href="<?= site_url() ?>">
           <i class="sidebar-icon dashboard-icon"></i>
           <span class="icon">Dashboard</span>
         </a>

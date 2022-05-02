@@ -69,10 +69,10 @@
               </p>
               <form class="login-form mt-lg" action="<?= site_url('auth/login') ?>" method="POST">
                 <div role="group" class="form-group">
-                  <label for="email" class="d-block">Username</label>
+                  <label for="email" class="d-block">Email</label>
                   <div>
                     <div role="group" class="input-group">
-                      <input type="text" name="username" required class="form-control input-transparent pl-3">
+                      <input type="email" name="email" required class="form-control input-transparent pl-3">
                     </div>
                   </div>
                 </div>

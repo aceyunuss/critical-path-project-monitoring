@@ -13,9 +13,9 @@ class Auth_m extends CI_Model
     return $this->db->affected_rows();
   }
 
-  public function checkLogin($username, $password)
+  public function checkLogin($email, $password)
   {
-    $this->db->where(['username' => $username, ]);
+    $this->db->where(['email' => $email, ]);
     return $this->db->get("users");
   }
 
