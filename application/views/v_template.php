@@ -6,6 +6,7 @@
   <link href="<?= base_url('assets/css/application.min.css') ?>" rel="stylesheet">
   <link href="<?= base_url('assets/css/owl.theme.green.min.css') ?>" rel="stylesheet">
   <link href="<?= base_url('assets/css/ine-awesome.css') ?>" rel="stylesheet">
+  <link href="<?= base_url('assets/css/select2.min.css') ?>" rel="stylesheet">
   <link rel="shortcut icon" href="<?= base_url('assets/img/favicon.png') ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
@@ -38,6 +39,8 @@
   <script src="<?= base_url('assets/js/hammer.js') ?> "></script>
   <script src='<?= base_url('assets/js/jquery.slimscroll.js') ?> '></script>
   <script src="<?= base_url('assets/js/jquery.hammer.js') ?> "></script>
+  <script src="<?= base_url('assets/js/select2.min.js') ?> "></script>
+  <script src="<?= base_url('assets/js/cpm.js') ?> "></script>
 
   <!-- common app js -->
   <script src="<?= base_url('assets/js/settings.js') ?> "></script>
@@ -61,5 +64,11 @@
   ?>
 
 </body>
+<script>
+  // $(".select2").select2();
+  $(".sees").select2({
+    theme: "classic"
+  });
+</script>
 
 </html>

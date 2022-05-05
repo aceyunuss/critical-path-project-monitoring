@@ -10,8 +10,7 @@ class User extends Core_Controller
 
     if ($this->session->userdata('status') != 'granted') {
       $this->session->sess_destroy();
-      $data['title'] = "Project Monitoring";
-      $this->load->view("v_login");
+      redirect('auth');
     }
   }
 
