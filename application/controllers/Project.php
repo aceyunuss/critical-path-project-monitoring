@@ -87,6 +87,20 @@ class Project extends Core_Controller
   {
     $data['project'] = $this->M_project->get($id)->row_array();
     $data['detail'] = $this->M_project_detail->get("", $id)->result_array();
+    if (!empty($data['detail'])) {
+      foreach ($data['detail'] as $k => $v) {
+        $start = empty($v['predecessor']) ? date("Y, n, d", strtotime($data['project']['start_date'])) : null;
+        $dat[] = [
+          $v['code'],
+          $start,
+          $v['duration'] * 24 * 60 * 60 * 1000,  ##y duration convert to milisecond
+          $v['percentage'],
+          $v['predecessor'], ##y dependency
+        ];
+      }
+    }
+
+    $data['cpm'] = json_encode($dat);
     $this->template("project/v_view", "Lihat Data Proyek", $data);
   }
 
@@ -152,7 +166,8 @@ class Project extends Core_Controller
         'code'        => $post['code'][$k],
         'description' => $post['desc'][$k],
         'duration'    => $post['duration'][$k],
-        'predecessor' => $post['pred'][$k]
+        'predecessor' => $post['pred'][$k],
+        'percentage'  => 0
       ];
     }
 
