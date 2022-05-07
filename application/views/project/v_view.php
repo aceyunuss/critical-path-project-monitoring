@@ -56,6 +56,19 @@
       </div>
     </section>
 
+    <section class="widget">
+      <div class="widget-body">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Member</label>
+          <div class="col-sm-10">
+            <?php foreach ($member as $k => $v) { ?>
+              <li><?= $v['member_name'] ?></li>
+            <?php } ?>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <?php if (!empty($detail)) {
       include('v_cpm.php');
     } ?>

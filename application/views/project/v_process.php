@@ -57,6 +57,22 @@
         </div>
       </section>
 
+      <section class="widget">
+        <div class="widget-body">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Member</label>
+            <div class="col-sm-10">
+              <span id="member-container">
+                <select required class="select2 js-example-responsive" multiple="multiple" style="width: 100%;" id="member" name="member[]">
+                  <?php foreach ($member as $key => $value) { ?>
+                    <option value="<?= $value['user_id'] ?>"> <?= $value['fullname'] ?> </option>
+                  <?php } ?>
+                </select>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="widget">
         <div class="widget-body">
@@ -142,6 +158,10 @@
   #pred-container .select2-results__option--highlighted {
     background-color: #3875d7 !important;
   }
+
+  #member-container .select2-results__option--highlighted {
+    background-color: #3875d7 !important;
+  }
 </style>
 
 
@@ -151,6 +171,11 @@
     $("#pred").select2({
       theme: "classic",
       dropdownParent: "#pred-container"
+    });
+
+    $("#member").select2({
+      theme: "classic",
+      dropdownParent: "#member-container"
     });
 
 

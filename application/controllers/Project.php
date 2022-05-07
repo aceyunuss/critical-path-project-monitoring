@@ -6,7 +6,7 @@ class Project extends Core_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(['M_user', 'M_project', 'M_project_detail']);
+    $this->load->model(['M_user', 'M_project', 'M_project_detail', 'M_project_member']);
 
     if ($this->session->userdata('status') != 'granted') {
       $this->session->sess_destroy();
@@ -23,8 +23,7 @@ class Project extends Core_Controller
 
   public function add()
   {
-    $this->db->where(['role' => "Pembimbing"]);
-    $data['pembimbing'] = $this->M_user->get()->result_array();
+    $data['pembimbing'] = $this->M_user->getRole("Pembimbing")->result_array();
     $this->template("project/v_add", "Tambah Data Proyek", $data);
   }
 
@@ -87,6 +86,7 @@ class Project extends Core_Controller
   {
     $data['project'] = $this->M_project->get($id)->row_array();
     $data['detail'] = $this->M_project_detail->get("", $id)->result_array();
+    $data['member'] = $this->M_project_member->get("", $id)->result_array();
     if (!empty($data['detail'])) {
       foreach ($data['detail'] as $k => $v) {
         $start = empty($v['predecessor']) ? date("Y, n, d", strtotime($data['project']['start_date'])) : null;
@@ -107,8 +107,7 @@ class Project extends Core_Controller
 
   public function edit($id)
   {
-    $this->db->where(['role' => "Pembimbing"]);
-    $data['pembimbing'] = $this->M_user->get()->result_array();
+    $data['pembimbing'] = $this->M_user->getRole("Pembimbing")->result_array();
     $data['project'] = $this->M_project->get($id)->row_array();
     $this->template("project/v_edit", "Ubah Data Proyek", $data);
   }
@@ -149,7 +148,7 @@ class Project extends Core_Controller
   public function process($id)
   {
     $data['project'] = $this->M_project->get($id)->row_array();
-    $data['detail'] = $this->M_project_detail->get("", $id)->row_array();
+    $data['member'] = $this->M_user->getRole("Murid")->result_array();
     $this->template("project/v_process", "Proses Data Proyek", $data);
   }
 
@@ -157,8 +156,7 @@ class Project extends Core_Controller
   public function go_process()
   {
     $post = $this->input->post();
-    $dt = [];
-
+    $mb = $dt = [];
 
     foreach ($post['code'] as $k => $v) {
       $dt[] = [
@@ -171,9 +169,17 @@ class Project extends Core_Controller
       ];
     }
 
+    foreach ($post['member'] as $k => $v) {
+      $mb[] = [
+        'project_id'  => $post['project_id'],
+        'user_id'     => $post['member'][$k],
+      ];
+    }
+    
     $this->db->trans_begin();
 
     $this->M_project_detail->insert($dt);
+    $this->M_project_member->insert($mb);
 
     if ($this->db->trans_status() !== FALSE) {
       $this->db->trans_commit();

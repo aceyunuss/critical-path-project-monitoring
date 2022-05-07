@@ -34,4 +34,11 @@ class M_user extends CI_Model
     $this->db->where("user_id", $id)->update("users", $data);
     return $this->db->affected_rows();
   }
+
+
+  public function getRole($role)
+  {
+    $this->db->where('role', $role);
+    return $this->get();
+  }
 }
