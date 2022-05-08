@@ -23,6 +23,7 @@ class M_project extends CI_Model
     if (!empty($id)) {
       $this->db->where("project_id", $id);
     }
+    $this->db->order_by("project_id", "desc");
     return $this->db->get("v_project");
   }
 

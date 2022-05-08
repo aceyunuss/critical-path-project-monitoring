@@ -26,7 +26,7 @@ class M_project_detail extends CI_Model
     if (!empty($project_id)) {
       $this->db->where("project_id", $project_id);
     }
-    return $this->db->get("project_detail");
+    return $this->db->get("v_project_detail");
   }
 
 

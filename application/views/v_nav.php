@@ -7,39 +7,38 @@
     </header>
     <h5 class="sidebar-nav-title">Master Data</h5>
     <ul class="sidebar-nav">
-      <li class=" active ">
-        <a href="<?= site_url() ?>">
-          <i class="sidebar-icon dashboard-icon"></i>
-          <span class="icon">Dashboard</span>
+      <li class="">
+        <a href="<?= site_url('user') ?>">
+          <i class="sidebar-icon account-icon"></i>
+          <span class="icon">User</span>
+        </a>
+      </li>
+      <li class="">
+        <a href="<?= site_url('masterproject') ?>">
+          <i class="sidebar-icon ui-elements"></i>
+          <span class="icon">Proyek</span>
         </a>
       </li>
     </ul>
     <h5 class="sidebar-nav-title">Menu</h5>
     <ul class="sidebar-nav">
       <li class="">
-        <a href="typography.html">
+        <a href="<?= site_url('project') ?>">
           <i class="sidebar-icon typography-icon"></i>
-          <span class="icon">Typography</span>
+          <span class="icon">Penentuan Proyek</span>
         </a>
       </li>
       <li class="">
-        <a href="tables.html">
+        <a href="<?= site_url('progress') ?>">
           <i class="sidebar-icon tables-icon"></i>
-          <span class="icon">Tables</span>
+          <span class="icon">Update Progres</span>
         </a>
       </li>
       <li class="">
-        <a class="collapsed" href="#sidebar-ui" data-toggle="collapse" data-parent="#sidebar">
-          <i class="sidebar-icon ui-elements"></i>
-          <span class="icon">UI Elements</span>
-          <i class="toggle fa fa-angle-down"></i>
+        <a href="<?= site_url('progress/progresslist') ?>">
+          <i class="sidebar-icon dashboard-icon"></i>
+          <span class="icon">List Progres</span>
         </a>
-        <ul id="sidebar-ui" class="collapse ">
-          <li class=""><a href="notifications.html">Notifications</a></li>
-          <li class=""><a href="icons.html">Icons</a></li>
-          <li class=""><a href="charts.html">Charts</a></li>
-          <li class=""><a href="maps_google.html">Google Maps</a></li>
-        </ul>
       </li>
     </ul>
   </div>

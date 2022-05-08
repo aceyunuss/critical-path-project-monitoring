@@ -1,7 +1,15 @@
 <div class="row">
   <div class="col-lg-12">
     <section class="widget">
+
+      <div class="widget-controls widget-controls">
+        <p><a class="btn btn-info" href="<?= site_url('masterproject/add') ?>"><i class="fa fa-plus"></i> Tambah Data</a></p>
+      </div>
+      <br>
+      <br>
+
       <div class="widget-body">
+
         <div class="table-responsive">
           <table class="table" id="usrtbl">
             <thead>
@@ -15,15 +23,11 @@
               </tr>
             </thead>
             <tbody>
-              <?php
-              foreach ((array)$projectlist as $key => $value) { ?>
+              <?php foreach ($projectlist as $key => $value) { ?>
                 <tr>
                   <td>
-                    <center>
-                      <?php $prc = (is_null($value['pm']) && is_null($value['pd'])) ?  "btn-success" : "btn-secondary disabled"; ?>
-                      <a href="<?= site_url('masterproject/view/' . $value['project_id']) ?>" class="btn btn-sm btn-outline-secondary">Lihat</a>
-                      <a href="<?= site_url('project/process/' . $value['project_id']) ?>" class="btn btn-sm <?= $prc; ?>">Proses</a>
-                    </center>
+                    <a href="<?= site_url('masterproject/view/' . $value['project_id']) ?>" class="btn btn-sm btn-outline-secondary">Lihat</a>
+                    <a href="<?= site_url('masterproject/edit/' . $value['project_id']) ?>" class="btn btn-sm btn-success">Ubah</a>
                   </td>
                   <td><?= $value['project_name'] ?></td>
                   <td><?= $value['instance'] ?></td>
