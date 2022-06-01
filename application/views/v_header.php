@@ -11,7 +11,13 @@
 
       <ul class="nav navbar-nav float-right">
         <li class="dropdown nav-item">
-          <a href="#">
+          <a href="<?= site_url('user/pass/'.$this->session->userdata('user_id')) ?>" style="color: white;">
+            Ubah Password
+          </a>
+        </li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="dropdown nav-item">
+          <a href="<?= site_url('auth/logout') ?>" style="color: white;">
             Logout
           </a>
         </li>

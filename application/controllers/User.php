@@ -111,4 +111,33 @@ class User extends Core_Controller
       echo "<script>alert('Gagal mengubah user'); location.href='" . site_url('user/edit/' . $post['user_id']) . "';</script>";
     }
   }
+
+  
+  public function pass($id)
+  {
+    $data['usr'] = $this->M_user->get($id)->row_array();
+    $this->template("user/v_pass", "Ubah Password", $data);
+  }
+
+  
+  public function go_pass()
+  {
+    $post = $this->input->post();
+
+    $dt['password'] = md5($post['password']);
+
+    $this->db->trans_begin();
+
+    $this->M_user->update($post['user_id'], $dt);
+
+    if ($this->db->trans_status() !== FALSE) {
+      $this->db->trans_commit();
+      echo "<script>alert('Berhasil mengubah password'); location.href='" . site_url() . "';</script>";
+    } else {
+      $this->db->trans_rollback();
+      echo "<script>alert('Gagal mengubah password'); location.href='" . site_url('user/pass/' . $post['user_id']) . "';</script>";
+    }
+  }
+
+
 }
