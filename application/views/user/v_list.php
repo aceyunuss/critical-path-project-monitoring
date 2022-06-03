@@ -25,8 +25,10 @@
               <?php foreach ($userlist as $key => $value) { ?>
                 <tr>
                   <td>
-                    <a href="<?= site_url('user/edit/'.$value['user_id']) ?>" class="btn btn-sm btn-success">Ubah</a>
-                    <a href="<?= site_url('user/delete/'.$value['user_id']) ?>" class="btn btn-sm btn-danger"  onclick="return confirm('Anda yakin ingin menghapus?');">Hapus</a>
+                    <a href="<?= site_url('user/edit/' . $value['user_id']) ?>" class="btn btn-sm btn-success">Ubah</a>
+                    <?php if ($this->session->userdata('role') == 'Pembimbing') { ?>
+                      <a href="<?= site_url('user/delete/' . $value['user_id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus?');">Hapus</a>
+                    <?php } ?>
                   </td>
                   <td><?= $value['fullname'] ?></td>
                   <td><?= $value['role'] ?></td>

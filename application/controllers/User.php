@@ -17,6 +17,9 @@ class User extends Core_Controller
 
   public function index()
   {
+    if ($this->session->userdata('role') != 'Pembimbing') {
+      $this->db->where('user_id', $this->session->userdata('user_id'));
+    }
     $data['userlist'] = $this->M_user->get()->result_array();
     $this->template("user/v_list", "Data User", $data);
   }
@@ -105,21 +108,26 @@ class User extends Core_Controller
 
     if ($this->db->trans_status() !== FALSE) {
       $this->db->trans_commit();
-      echo "<script>alert('Berhasil mengubah user'); location.href='" . site_url('user') . "';</script>";
+      if ($this->session->userdata('role') != 'Pembimbing') {
+        $site = site_url('user');
+      } else {
+        $site = site_url();
+      }
+      echo "<script>alert('Berhasil mengubah user'); location.href='" . $site . "';</script>";
     } else {
       $this->db->trans_rollback();
       echo "<script>alert('Gagal mengubah user'); location.href='" . site_url('user/edit/' . $post['user_id']) . "';</script>";
     }
   }
 
-  
+
   public function pass($id)
   {
     $data['usr'] = $this->M_user->get($id)->row_array();
     $this->template("user/v_pass", "Ubah Password", $data);
   }
 
-  
+
   public function go_pass()
   {
     $post = $this->input->post();
@@ -138,6 +146,4 @@ class User extends Core_Controller
       echo "<script>alert('Gagal mengubah password'); location.href='" . site_url('user/pass/' . $post['user_id']) . "';</script>";
     }
   }
-
-
 }

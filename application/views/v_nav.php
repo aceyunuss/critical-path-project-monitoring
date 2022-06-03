@@ -40,6 +40,12 @@
           <span class="icon">List Progres</span>
         </a>
       </li>
+      <li class="">
+        <a href="<?= site_url('project/laporan') ?>">
+          <i class="sidebar-icon settings-icon"></i>
+          <span class="icon">Laporan Akhir</span>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
