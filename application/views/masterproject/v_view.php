@@ -21,9 +21,21 @@
           </div>
         </div>
         <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Tanggal Selsai</label>
+          <div class="col-sm-10">
+            <label class="col-form-label"><?= substr($project['end_date'], 0, 10) ?></label>
+          </div>
+        </div>
+        <div class="form-group row">
           <label class="col-sm-2 col-form-label">Instansi</label>
           <div class="col-sm-10">
             <label class="col-form-label"><?= $project['instance'] ?></label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Tipe</label>
+          <div class="col-sm-10">
+            <label class="col-form-label"><?= $project['type'] ?></label>
           </div>
         </div>
         <div class="form-group row">
@@ -59,7 +71,7 @@
     <section class="widget">
       <div class="widget-body">
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Member</label>
+          <label class="col-sm-2 col-form-label">Murid</label>
           <div class="col-sm-10">
             <?php foreach ($member as $k => $v) { ?>
               <li><?= $v['member_name'] ?></li>

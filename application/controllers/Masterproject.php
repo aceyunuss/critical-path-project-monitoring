@@ -24,6 +24,7 @@ class Masterproject extends Core_Controller
 
   public function add()
   {
+    $data['tipe'] = ['MAK Kuliner', 'MAK Report', 'MAK TIK', 'Podcast Ruang Kamad'];
     $data['pembimbing'] = $this->M_user->getRole("Pembimbing")->result_array();
     $this->template("masterproject/v_add", "Tambah Data Proyek", $data);
   }
@@ -40,10 +41,12 @@ class Masterproject extends Core_Controller
       'description'   => $post['description'],
       'created_by'    => $this->session->userdata['name'],
       'mentor_id'     => $post['mentor'],
-      'start_date'    => $post['date'],
+      'start_date'    => $post['st'],
       'created_at'    => date('Y-m-d'),
       'status'        => 'B',
       'progress'      => 0,
+      'end_date'      => $post['end'],
+      'type'          => $post['tipe']
     ];
 
     if (!empty($_FILES['att']['name'])) {
@@ -109,6 +112,7 @@ class Masterproject extends Core_Controller
 
   public function edit($id)
   {
+    $data['tipe'] = ['MAK Kuliner', 'MAK Report', 'MAK TIK', 'Podcast Ruang Kamad'];
     $data['pembimbing'] = $this->M_user->getRole("Pembimbing")->result_array();
     $data['project'] = $this->M_project->get($id)->row_array();
     $this->template("masterproject/v_edit", "Ubah Data Proyek", $data);
@@ -124,7 +128,9 @@ class Masterproject extends Core_Controller
       'instance'      => $post['instance'],
       'description'   => $post['description'],
       'mentor_id'     => $post['mentor'],
-      'start_date'    => $post['date'],
+      'start_date'    => $post['st'],
+      'end_date'      => $post['end'],
+      'type'          => $post['tipe']
     ];
 
     if (!empty($_FILES['att']['name'])) {

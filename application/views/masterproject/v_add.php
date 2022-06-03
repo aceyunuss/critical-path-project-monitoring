@@ -18,13 +18,30 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Tanggal Mulai</label>
             <div class="col-sm-3">
-              <input type="date" id="datefield" name="date" class="needed datetimepicker form-control" required>
+              <input type="date" id="datefield" name="st" class="needed datetimepicker form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tanggal Selesai</label>
+            <div class="col-sm-3">
+              <input type="date" id="datefield" name="end" class="needed datetimepicker form-control" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Instansi</label>
             <div class="col-sm-7">
               <input type="text" maxlength="255" class="form-control" name="instance" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tipe</label>
+            <div class="col-sm-5">
+              <select class="form-control" required name="tipe">
+                <option value="">-- Pilih -- </option>
+                <?php foreach ($tipe as $key => $value) { ?>
+                  <option value="<?= $value ?>"><?= $value ?></option>
+                <?php } ?>
+              </select>
             </div>
           </div>
           <div class="form-group row">
