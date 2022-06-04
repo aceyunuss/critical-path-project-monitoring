@@ -53,6 +53,18 @@
               <label class="col-form-label"><?= $projectdetail['updated_at'] ?></label>
             </div>
           </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Catatan PBM</label>
+            <div class="col-sm-9">
+              <label class="col-form-label"><?= $projectdetail['ext_note'] ?></label>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Komentar</label>
+            <div class="col-sm-9">
+              <label class="col-form-label"><?= $projectdetail['ext_reply'] ?></label>
+            </div>
+          </div>
           <br>
           <center>
             <a style="font-size: 16px;" onclick="history.back()" class="btn btn-outline-secondary btn-sm">Kembali</a>

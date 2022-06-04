@@ -60,7 +60,7 @@
       <section class="widget">
         <div class="widget-body">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Member</label>
+            <label class="col-sm-2 col-form-label">Murid</label>
             <div class="col-sm-10">
               <span id="member-container">
                 <select required class="select2 js-example-responsive" multiple="multiple" style="width: 100%;" id="member" name="member[]">

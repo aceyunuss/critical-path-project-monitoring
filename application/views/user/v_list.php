@@ -3,7 +3,9 @@
     <section class="widget">
 
       <div class="widget-controls widget-controls">
-        <p><a class="btn btn-info" href="<?= site_url('user/add') ?>"><i class="fa fa-plus"></i> Tambah Data</a></p>
+        <?php if ($this->session->userdata('role') == 'Pembimbing') { ?>
+          <p><a class="btn btn-info" href="<?= site_url('user/add') ?>"><i class="fa fa-plus"></i> Tambah Data</a></p>
+        <?php } ?>
       </div>
       <br>
       <br>

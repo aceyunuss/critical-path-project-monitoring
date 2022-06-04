@@ -17,7 +17,12 @@ class Progress extends Core_Controller
 
   public function index()
   {
-    $this->db->where('updated_at', NULL);
+    if ($this->session->userdata('role') == 'Pembimbing') {
+      $this->db->where('percentage', 50);
+    } else {
+      $this->db->where('percentage', 0);
+      $this->db->or_where('percentage', 80);
+    }
     $data['projecdetail'] = $this->M_project_detail->get()->result_array();
     $this->template("progress/v_todolist", "Update Progres Proyek", $data);
   }
@@ -42,11 +47,29 @@ class Progress extends Core_Controller
 
     $post = $this->input->post();
 
-    $dt = [
-      'note'          => $post['note'],
-      'updated_by'    => $this->session->userdata['name'],
-      'updated_at'    => date('Y-m-d H:i:s'),
-    ];
+    switch ($post['prc']) {
+      case '0':
+        $dt = [
+          'note'          => $post['note'],
+          'updated_by'    => $this->session->userdata['name'],
+          'updated_at'    => date('Y-m-d H:i:s'),
+          'percentage'    => 50
+        ];
+        break;
+      case '50':
+        $dt = [
+          'ext_note'      => $post['xn'],
+          'percentage'    => empty($post['xn']) ? 100 : 80
+        ];
+        break;
+      case '80':
+        $dt = [
+          'ext_reply'     => $post['xr'],
+          'percentage'    => 100
+        ];
+        break;
+    }
+
 
     if (!empty($_FILES['att']['name'])) {
       $this->session->set_userdata("dir_upload", "progress");
@@ -60,6 +83,7 @@ class Progress extends Core_Controller
 
     $detail = $this->M_project_detail->get("", $post['project_id'])->result_array();
     $project = $this->M_project->get($post['project_id'])->row_array();
+
 
     $p = 0;
     foreach ($detail as $k => $v) {
@@ -84,12 +108,11 @@ class Progress extends Core_Controller
       echo "<script>alert('Gagal mengubah progres proyek'); location.href='" . site_url('progress/progress' . $post['detail_id']) . "';</script>";
     }
   }
-  
-  
+
+
   public function progresslist()
   {
     $data['projecdetail'] = $this->M_project_detail->get()->result_array();
     $this->template("progress/v_list", "List Progres Proyek", $data);
   }
-
 }

@@ -10,6 +10,9 @@
       </ul>
 
       <ul class="nav navbar-nav float-right">
+        <li class="dropdown nav-item" style="color: white;">
+          <?= $this->session->userdata('name') . ' (' . $this->session->userdata('role') . ')' ?> &nbsp;&nbsp;|&nbsp;&nbsp;
+        </li>
         <li class="dropdown nav-item">
           <a href="<?= site_url('auth/logout') ?>" style="color: white;">
             Logout

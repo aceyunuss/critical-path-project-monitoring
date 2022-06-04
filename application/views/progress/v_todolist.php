@@ -11,6 +11,7 @@
                 <th>Proyek</th>
                 <th>Mentor</th>
                 <th>Durasi</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                   <td><?= $value['project_name'] ?></td>
                   <td><?= $value['mentor_name'] ?></td>
                   <td><?= $value['duration'] ?> hari</td>
+                  <td><?= $value['status'] ?></td>
                 </tr>
               <?php } ?>
             </tbody>

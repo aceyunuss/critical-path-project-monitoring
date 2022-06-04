@@ -27,7 +27,7 @@ class User extends Core_Controller
 
   public function add()
   {
-    $data['role'] = ['Murid', 'Pembimbing', 'Manajer Proyek'];
+    $data['role'] = ['Murid', 'Pembimbing', 'Manajer Proyek', 'Kepala Madrasah'];
     $this->template("user/v_add", "Tambah Data User", $data);
   }
 
@@ -80,7 +80,7 @@ class User extends Core_Controller
   public function edit($id)
   {
     $data['usr'] = $this->M_user->get($id)->row_array();
-    $data['role'] = ['Murid', 'Pembimbing', 'Manajer Proyek'];
+    $data['role'] = ['Murid', 'Pembimbing', 'Manajer Proyek', 'Kepala Madrasah'];
     $this->template("user/v_edit", "Ubah Data User", $data);
   }
 
