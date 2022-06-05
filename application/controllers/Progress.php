@@ -20,10 +20,12 @@ class Progress extends Core_Controller
     if ($this->session->userdata('role') == 'Pembimbing') {
       $this->db->where('mentor_id', $this->session->userdata('user_id'));
       $this->db->where('percentage', 50);
-    } else {
+    } else if ($this->session->userdata('role') == 'Murid') {
       $projectmember = $this->M_project_member->memberOf();
       $this->db->where_in('project_id', $projectmember);
       $this->db->where_in('percentage', [0, 80]);
+    } else {
+      $this->db->where('percentage', 99);
     }
     $data['projecdetail'] = $this->M_project_detail->get()->result_array();
     // echo $this->db->last_query();

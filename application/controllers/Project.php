@@ -76,14 +76,14 @@ class Project extends Core_Controller
       case 'Murid':
         $st = 'P';
         break;
-      case 'Pembimbing':
+      case 'Manajer Proyek':
         $st = 'V';
         break;
       case 'Kepala Madrasah':
         $st = 'C';
         break;
       default:
-        # code...
+        $st = 'X';
         break;
     }
 
