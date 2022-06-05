@@ -43,7 +43,7 @@ class User extends Core_Controller
       'phone'         => $post['phone'],
       'email'         => $post['email'],
       'birthdate'     => $post['birthdate'],
-      'password'      => sha1($post['password']),
+      'password'      => md5($post['password']),
     ];
 
     $this->db->trans_begin();
@@ -99,7 +99,7 @@ class User extends Core_Controller
     ];
 
     if (!empty($post['password'])) {
-      $dt['password'] = sha1($post['password']);
+      $dt['password'] = md5($post['password']);
     }
 
     $this->db->trans_begin();
