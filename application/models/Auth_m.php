@@ -15,7 +15,7 @@ class Auth_m extends CI_Model
 
   public function checkLogin($email, $password)
   {
-    $this->db->where(['email' => $email, 'password' => $password ]);
+    $this->db->where(['email' => $email,]);
     return $this->db->get("users");
   }
 

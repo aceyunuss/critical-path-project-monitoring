@@ -18,12 +18,16 @@ class Progress extends Core_Controller
   public function index()
   {
     if ($this->session->userdata('role') == 'Pembimbing') {
+      $this->db->where('mentor_id', $this->session->userdata('user_id'));
       $this->db->where('percentage', 50);
     } else {
-      $this->db->where('percentage', 0);
-      $this->db->or_where('percentage', 80);
+      $projectmember = $this->M_project_member->memberOf();
+      $this->db->where_in('project_id', $projectmember);
+      $this->db->where_in('percentage', [0, 80]);
     }
     $data['projecdetail'] = $this->M_project_detail->get()->result_array();
+    // echo $this->db->last_query();
+    // die();
     $this->template("progress/v_todolist", "Update Progres Proyek", $data);
   }
 

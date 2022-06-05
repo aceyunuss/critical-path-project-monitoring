@@ -24,13 +24,26 @@
                   <td><?= $value['project_name'] ?></td>
                   <td><?= $value['mentor_name'] ?></td>
                   <td><?= $value['duration'] ?> hari</td>
-                  <td>
-                    <?php if (empty($value['updated_at'])) { ?>
-                      <span class="badge bg-warning">Belum dikerjakan</span>
-                    <?php } else { ?>
-                      <span class="badge bg-success">Sudah dikerjakan</span>
-                    <?php } ?>
-                  </td>
+                  <?php
+                  switch ($value['percentage']) {
+                    case '0':
+                      $bg = 'bg-gray';
+                      break;
+                    case '50':
+                      $bg = 'bg-success';
+                      break;
+                    case '80':
+                      $bg = 'bg-warning';
+                      break;
+                    case '100':
+                      $bg = 'bg-primary';
+                      break;
+
+                    default:
+                      # code...
+                      break;
+                  } ?>
+                  <td> <span class="badge <?= $bg ?>"><?= $value['status'] ?> </span></td>
                 </tr>
               <?php } ?>
             </tbody>

@@ -5,7 +5,7 @@
         <img src="<?= base_url('assets/img/logo.svg') ?>" alt="...">
         <b class="fw-bold"></b> PM Tools</a>
     </header>
-    <h5 class="sidebar-nav-title">Master Data</h5>
+    <h5 class="sidebar-nav-title">Menu</h5>
     <ul class="sidebar-nav">
       <li class="">
         <a href="<?= site_url('user') ?>">
@@ -19,9 +19,6 @@
           <span class="icon">Proyek</span>
         </a>
       </li>
-    </ul>
-    <h5 class="sidebar-nav-title">Menu</h5>
-    <ul class="sidebar-nav">
       <li class="">
         <a href="<?= site_url('project') ?>">
           <i class="sidebar-icon typography-icon"></i>
@@ -49,3 +46,7 @@
     </ul>
   </div>
 </nav>
+
+<script>
+  var rl = "<?= $this->session->userdata('role'); ?>";
+</script>

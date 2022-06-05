@@ -27,7 +27,9 @@
                 <tr>
                   <td>
                     <a href="<?= site_url('masterproject/view/' . $value['project_id']) ?>" class="btn btn-sm btn-outline-secondary">Lihat</a>
-                    <a href="<?= site_url('masterproject/edit/' . $value['project_id']) ?>" class="btn btn-sm btn-success">Ubah</a>
+                    <?php $btn = $value['status'] == 'B' ? "btn-success" : "btn-secondary disabled"; ?>
+                    <a href="<?= site_url('masterproject/edit/' . $value['project_id']) ?>" class="btn btn-sm <?= $btn ?> ">Ubah</a>
+
                   </td>
                   <td><?= $value['project_name'] ?></td>
                   <td><?= $value['instance'] ?></td>

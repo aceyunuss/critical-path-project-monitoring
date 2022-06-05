@@ -20,7 +20,9 @@
                 <tr>
                   <td>
                     <center>
-                      <a href="<?= site_url('project/lap_process/' . $value['project_id']) ?>" class="btn btn-sm btn-success">Proses</a>
+                      <?php $st = $value['status'] == 'S' ?  "btn-secondary disabled" : "btn-success"; ?>
+                      <a href="<?= site_url('project/lap_view/' . $value['project_id']) ?>" class="btn btn-sm btn-outline-secondary">Lihat</a>
+                      <a href="<?= site_url('project/lap_process/' . $value['project_id']) ?>" class="btn btn-sm <?= $st ?>">Proses</a>
                     </center>
                   </td>
                   <td><?= $value['project_name'] ?></td>

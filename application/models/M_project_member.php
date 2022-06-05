@@ -42,4 +42,20 @@ class M_project_member extends CI_Model
     $this->db->where("member_id", $id)->update("project_member", $data);
     return $this->db->affected_rows();
   }
+
+
+  public function memberOf()
+  {
+    $pid = [];
+    $project = $this->db->distinct('project_id')
+      ->where('user_id', $this->session->userdata('user_id'))
+      ->get('project_member')
+      ->result_array();
+    if (!empty($project)) {
+      foreach ($project as $key => $value) {
+        $pid[] = $value['project_id'];
+      }
+    }
+    return $pid;
+  }
 }
