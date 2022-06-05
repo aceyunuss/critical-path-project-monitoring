@@ -11,7 +11,7 @@
     <?php include($content . '.php') ?>
 
     <footer class="content-footer hidden-print">
-      Flatlogic One Lite - Bootstrap Admin Dashboard Template Made by <a href="https://flatlogic.com" rel="nofollow" target="_blank" class="text-dark">Flatlogic</a>
+      Copyrght &copy; Salman Al Farisyi
     </footer>
   </main>
 </div>

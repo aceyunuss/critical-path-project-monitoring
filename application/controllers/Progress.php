@@ -85,17 +85,22 @@ class Progress extends Core_Controller
     $project = $this->M_project->get($post['project_id'])->row_array();
 
 
-    $p = 0;
+    $p = $prg = 0;
     foreach ($detail as $k => $v) {
       if (!empty($v['updated_at'])) {
         $p++;
       }
+      $prg += (int)$v['percentage'];
     }
 
     $dp['progress'] = $p / count($detail) * 100;
 
     if ($project['status'] == "B") {
       $dp['status'] = "D";
+    }
+
+    if ($prg / count($detail) == 100) {
+      $dp['status'] = 'P';
     }
 
     $this->M_project->update($post['project_id'], $dp);
