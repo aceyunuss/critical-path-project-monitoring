@@ -2,8 +2,8 @@
   <div class="js-sidebar-content">
     <header class="logo d-md-block">
       <a href="<?= site_url(); ?>">
-        <img src="<?= base_url('assets/img/logo.jpg') ?>" alt="..." style = "width:60px"> 
-        <b class="fw-bold">MAK</b>  Pro</a>
+        <img src="<?= base_url('assets/img/logo.jpg') ?>" alt="..." style="width:60px">
+        <b class="fw-bold">MAK</b> Pro</a>
     </header>
     <h5 class="sidebar-nav-title">Menu</h5>
     <ul class="sidebar-nav">
@@ -50,8 +50,8 @@
           <i class="toggle fa fa-angle-down"></i>
         </a>
         <ul id="ta" class="collapse" style="">
-          <li class=""><a href="<?= site_url('user') ?>">Tambah User</a></li>
-          <li class=""> <a href="<?= site_url('project/laporan') ?>">Laporan Akhir</a></li>
+          <li class=""><a href="<?= site_url('user') ?>">User</a></li>
+          <li class=""> <a href="<?= site_url('project/laporanm') ?>">Laporan Akhir</a></li>
         </ul>
       </li>
       <li class="">
@@ -63,8 +63,8 @@
         <ul id="ap" class="collapse" style="">
           <li class=""><a href="<?= site_url('masterproject') ?>">Input Project Baru</a></li>
           <li class=""><a href="<?= site_url('project') ?>">Input Jadwal Project</a></li>
+          <li class=""> <a href="<?= site_url('project/jadwal') ?>">Jadwal Project</a></li>
           <li class=""><a href="<?= site_url('progress') ?>">Update Status Project</a></li>
-          <!-- <li class=""> <a href="<?= site_url('project/laporan') ?>">Laporan Akhir</a></li> -->
         </ul>
       </li>
       <li class="">
@@ -74,9 +74,15 @@
           <i class="toggle fa fa-angle-down"></i>
         </a>
         <ul id="la" class="collapse" style="">
-          <li class=""><a href="<?= site_url('project/laporan') ?>">Verifikasi Laporan Project</a></li>
-          <li class=""><a href="<?= site_url('project/laporan') ?>">Cetak Laporan Akhir Project</a></li>
+          <li class=""><a href="<?= site_url('project/laporan') ?>"><?= $this->session->userdata('role') == "Manajer Proyek" ? "Verifikasi" : "Approve" ?> Laporan Project</a></li>
+          <li class=""><a href="<?= site_url('project/cetaklaporan') ?>">Cetak Laporan Akhir Project</a></li>
         </ul>
+      </li>
+      <li class="">
+        <a href="<?= site_url('project/story') ?>">
+          <i class="sidebar-icon logout-icon"></i>
+          <span class="icon">Story Project</span>
+        </a>
       </li>
     </ul>
   </div>

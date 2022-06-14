@@ -10,6 +10,28 @@
       </ul>
 
       <ul class="nav navbar-nav float-right">
+        <li class="dropdown nav-item">
+          <a href="#" class="nav-link" id="notifications-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-position="bottom-middle-aligned" data-disable-interaction="false">
+            <i class="icons notifications-icon"></i>
+            <i class="fa fa-circle text-danger"></i>
+          </a>
+          <ul tabindex="-1" class="dropdown-menu dropdown-menu-messages dropdown-menu-right comments">
+            <p class="dropdown-name">Notifications</p>
+            <li role="presentation">
+              <a role="menuitem" target="_self" href="#" class="dropdown-item">
+                <span class="avatar thumb-sm mr-3">
+                  <img src="img/avatars/tn1.png" alt="..." class="rounded-circle pt-1">
+                </span>
+                <div>
+                  <span> <span class="fw-bold">Jim Tomson </span> removed you to the project <span class="fw-bold"> Flatlogic One</span> </span>
+                </div>
+                <div>
+                  <span class="dropdown-time">9:15 AM</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
         <li class="dropdown nav-item" style="color: white;">
           Selamat datang <?= $this->session->userdata('name') . ' (' . $this->session->userdata('role') . ')' ?> &nbsp;&nbsp;|&nbsp;&nbsp;
         </li>

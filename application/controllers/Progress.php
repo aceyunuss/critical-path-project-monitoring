@@ -30,6 +30,7 @@ class Progress extends Core_Controller
     $data['projecdetail'] = $this->M_project_detail->get()->result_array();
     // echo $this->db->last_query();
     // die();
+    $this->db->order_by('percentage', 'asc');
     $data['all'] = $this->M_project_detail->get()->result_array();
 
     $this->template("progress/v_todolist", "Update Progres Proyek", $data);

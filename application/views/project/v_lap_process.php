@@ -88,7 +88,7 @@
         </div>
       </section>
 
-      <section class="widget">
+      <!-- <section class="widget">
         <div class="widget-body">
 
           <table class="cpmtable table table-bordered table-lg mt-lg mb-0">
@@ -118,7 +118,7 @@
             </tbody>
           </table>
         </div>
-      </section>
+      </section> -->
 
       <section class="widget">
         <div class="widget-body">
