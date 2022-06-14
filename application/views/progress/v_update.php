@@ -22,6 +22,12 @@
               <label class="col-form-label"><?= $projectdetail['duration'] ?> hari</label>
             </div>
           </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Pembimbing</label>
+            <div class="col-sm-10">
+              <label class="col-form-label"><?= $projectdetail['mentor_name'] ?></label>
+            </div>
+          </div>
         </div>
       </section>
 
