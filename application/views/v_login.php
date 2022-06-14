@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Light Blue Bootstrap Dashboard - Login</title>
+  <title>MAK Pro - Login</title>
   <link href="<?= base_url('assets/css/application.min.css') ?>" rel="stylesheet">
   <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
   <!--[if IE 9]>

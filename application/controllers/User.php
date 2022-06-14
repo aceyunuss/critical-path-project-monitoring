@@ -43,8 +43,16 @@ class User extends Core_Controller
       'phone'         => $post['phone'],
       'email'         => $post['email'],
       'birthdate'     => $post['birthdate'],
+      'birthplace'    => $post['birthplace'],
       'password'      => md5($post['password']),
     ];
+
+    
+    if (!empty($_FILES['pict']['name'])) {
+      $this->session->set_userdata("dir_upload", "user");
+      $upload = $this->upld("pict");
+      $dt['pict'] = $upload;
+    }
 
     $this->db->trans_begin();
 
@@ -96,10 +104,18 @@ class User extends Core_Controller
       'phone'         => $post['phone'],
       'email'         => $post['email'],
       'birthdate'     => $post['birthdate'],
+      'birthplace'    => $post['birthplace'],
     ];
+
 
     if (!empty($post['password'])) {
       $dt['password'] = md5($post['password']);
+    }
+
+    if (!empty($_FILES['pict']['name'])) {
+      $this->session->set_userdata("dir_upload", "user");
+      $upload = $this->upld("pict");
+      $dt['pict'] = $upload;
     }
 
     $this->db->trans_begin();
