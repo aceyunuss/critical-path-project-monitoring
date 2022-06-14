@@ -7,7 +7,7 @@
     </header>
     <h5 class="sidebar-nav-title">Menu</h5>
     <ul class="sidebar-nav">
-      <li class="">
+      <!-- <li class="">
         <a href="<?= site_url('user') ?>">
           <i class="sidebar-icon account-icon"></i>
           <span class="icon">User</span>
@@ -36,11 +36,11 @@
           <i class="sidebar-icon dashboard-icon"></i>
           <span class="icon">List Progres</span>
         </a>
-      </li>
+      </li> -->
       <li class="">
-        <a href="<?= site_url('project/laporan') ?>">
+        <a href="<?= site_url('') ?>">
           <i class="sidebar-icon settings-icon"></i>
-          <span class="icon">Laporan Akhir</span>
+          <span class="icon">Beranda</span>
         </a>
       </li>
       <li class="">
@@ -62,8 +62,9 @@
         </a>
         <ul id="ap" class="collapse" style="">
           <li class=""><a href="<?= site_url('masterproject') ?>">Input Project Baru</a></li>
-          <li class=""><a href="<?= site_url('progress') ?>">Update Stataus Project</a></li>
-          <li class=""> <a href="<?= site_url('project/laporan') ?>">Laporan Akhir</a></li>
+          <li class=""><a href="<?= site_url('project') ?>">Input Jadwal Project</a></li>
+          <li class=""><a href="<?= site_url('progress') ?>">Update Status Project</a></li>
+          <!-- <li class=""> <a href="<?= site_url('project/laporan') ?>">Laporan Akhir</a></li> -->
         </ul>
       </li>
       <li class="">

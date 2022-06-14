@@ -14,7 +14,8 @@ class Auth extends Core_Controller
   public function index()
   {
     if ($this->session->userdata('status') == 'granted') {
-      $this->template('v_dashboard', "Dashboard");
+      // $
+      $this->template('v_dashboard', "Beranda");
     } else {
       $this->session->sess_destroy();
       $data['title'] = "Project Monitoring";
