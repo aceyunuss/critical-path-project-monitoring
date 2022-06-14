@@ -37,15 +37,21 @@ class Masterproject extends Core_Controller
 
     $dt = [
       'project_name'  => $post['name'],
-      'instance'      => $post['instance'],
+      'pho'           => $post['pho'],
+      'fho'           => $post['fho'],
       'description'   => $post['description'],
+      'owner'         => $post['owner'],
+      'location'      => $post['location'],
+      'no_ctr'        => $post['noctr'],
+      'type_ctr'      => $post['tipectr'],
+      'value'         => $post['value'],
+      'spmk'          => $post['spmk'],
       'created_by'    => $this->session->userdata['name'],
       'mentor_id'     => $post['mentor'],
       'start_date'    => $post['st'],
       'created_at'    => date('Y-m-d'),
       'status'        => 'B',
       'progress'      => 0,
-      'end_date'      => $post['end'],
       'type'          => $post['tipe']
     ];
 
@@ -61,10 +67,10 @@ class Masterproject extends Core_Controller
 
     if ($this->db->trans_status() !== FALSE) {
       $this->db->trans_commit();
-      echo "<script>alert('Berhasil menambah proyek'); location.href='" . site_url('masterproject') . "';</script>";
+      // echo "<script>alert('Berhasil menambah proyek'); location.href='" . site_url('masterproject') . "';</script>";
     } else {
       $this->db->trans_rollback();
-      echo "<script>alert('Gagal menambah proyek'); location.href='" . site_url('masterproject/add') . "';</script>";
+      // echo "<script>alert('Gagal menambah proyek'); location.href='" . site_url('masterproject/add') . "';</script>";
     }
   }
 
@@ -125,11 +131,17 @@ class Masterproject extends Core_Controller
 
     $dt = [
       'project_name'  => $post['name'],
-      'instance'      => $post['instance'],
+      'pho'           => $post['pho'],
+      'fho'           => $post['fho'],
       'description'   => $post['description'],
+      'owner'         => $post['owner'],
+      'location'      => $post['location'],
+      'no_ctr'        => $post['noctr'],
+      'type_ctr'      => $post['tipectr'],
+      'value'         => $post['value'],
+      'spmk'          => $post['spmk'],
       'mentor_id'     => $post['mentor'],
       'start_date'    => $post['st'],
-      'end_date'      => $post['end'],
       'type'          => $post['tipe']
     ];
 

@@ -4,39 +4,43 @@
       <section class="widget">
         <div class="widget-body">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Nama Proyek</label>
-            <div class="col-sm-7">
-              <input type="text" maxlength="255" class="form-control" name="name" required value="<?= $project['project_name'] ?>">
-              <input type="hidden" name="project_id" required value="<?= $project['project_id'] ?>">
+            <label class="col-sm-2 col-form-label">Nama Proyek*</label>
+            <div class="col-sm-4">
+              <input type="text" maxlength="255" class="form-control" name="name" value="<?= $project['project_name'] ?>" required>
+              <input type="hidden" name="project_id" value="<?= $project['project_id'] ?>">
+            </div>
+            <label class="col-sm-2 col-form-label">Tanggal PHO*</label>
+            <div class="col-sm-4">
+              <input type="date" maxlength="255" class="form-control" name="pho" required value="<?= substr($project['pho'], 0, 10) ?>">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Deskripsi Proyek</label>
-            <div class="col-sm-7">
+            <label class="col-sm-2 col-form-label">Deskripsi Proyek*</label>
+            <div class="col-sm-4">
               <textarea class="form-control" name="description" required><?= $project['description'] ?></textarea>
             </div>
+            <label class="col-sm-2 col-form-label">Tanggal FHO*</label>
+            <div class="col-sm-4">
+              <input type="date" maxlength="255" class="form-control" name="fho" required value="<?= substr($project['fho'], 0, 10) ?>">
+            </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Tanggal Mulai</label>
-            <div class="col-sm-3">
+            <label class="col-sm-2 col-form-label">Pemilik Proyek*</label>
+            <div class="col-sm-4">
+              <input type="text" maxlength="255" class="form-control" name="owner" required value="<?= $project['owner'] ?>">
+            </div>
+            <label class="col-sm-2 col-form-label">Watku Pelaksanaan*</label>
+            <div class="col-sm-4">
               <input type="date" id="datefield" name="st" class="needed datetimepicker form-control" required value="<?= substr($project['start_date'], 0, 10) ?>">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Tanggal Selesai</label>
-            <div class="col-sm-3">
-              <input type="date" id="datefield" name="end" class="needed datetimepicker form-control" required value="<?= substr($project['end_date'], 0, 10) ?>">
+            <label class="col-sm-2 col-form-label">Lokasi*</label>
+            <div class="col-sm-4">
+              <input type="text" name="location" class="form-control" required value="<?= $project['location'] ?>">
             </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Instansi</label>
-            <div class="col-sm-7">
-              <input type="text" maxlength="255" class="form-control" name="instance" required value="<?= $project['instance'] ?>">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Tipe</label>
-            <div class="col-sm-5">
+            <label class="col-sm-2 col-form-label">Jenis Proyek*</label>
+            <div class="col-sm-4">
               <select class="form-control" required name="tipe">
                 <option value="">-- Pilih -- </option>
                 <?php foreach ($tipe as $key => $value) { ?>
@@ -46,8 +50,27 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Pembimbing</label>
-            <div class="col-sm-5">
+            <label class="col-sm-2 col-form-label">No & Tgl Kontrak*</label>
+            <div class="col-sm-4">
+              <input type="text" name="noctr" class="form-control" required value="<?= $project['no_ctr'] ?>">
+            </div>
+            <label class="col-sm-2 col-form-label">Jenis Kontrak*</label>
+            <div class="col-sm-4">
+              <select class="form-control" required name="tipectr">
+                <option value="">-- Pilih -- </option>
+                <?php foreach ($tipe as $key => $value) { ?>
+                  <option <?= $value == $project['type_ctr'] ? "selected" : ""; ?> value="<?= $value ?>"><?= $value ?></option>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Nilai Kontrak*</label>
+            <div class="col-sm-4">
+              <input type="text" maxlength="255" class="form-control" name="value" required value="<?= $project['value'] ?>">
+            </div>
+            <label class="col-sm-2 col-form-label">Pembimbing*</label>
+            <div class="col-sm-4">
               <select class="form-control" required name="mentor">
                 <option value="">-- Pilih -- </option>
                 <?php foreach ($pembimbing as $key => $value) { ?>
@@ -57,8 +80,12 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Lampiran</label>
-            <div class="col-sm-7">
+            <label class="col-sm-2 col-form-label">No & Tgl SPMK*</label>
+            <div class="col-sm-4">
+              <input type="text" maxlength="255" class="form-control" name="spmk" required value="<?= $project['spmk'] ?>">
+            </div>
+            <label class="col-sm-2 col-form-label">Lampiran*</label>
+            <div class="col-sm-4">
               <input type="file" class="form-control" name="att">
               <a target="_blank" href="<?= site_url('project/dwnld/project/' . $project['attachment']) ?>"><?= $project['attachment'] ?></a>
             </div>
