@@ -14,8 +14,20 @@ class Auth extends Core_Controller
   public function index()
   {
     if ($this->session->userdata('status') == 'granted') {
-      // $
-      $this->template('v_dashboard', "Beranda");
+      $this->load->model(['M_project', 'M_user']);
+
+      $data['client'] = $this->M_project->get()->num_rows();
+
+      $this->db->where('status', 'S');
+      $data['done'] = $this->M_project->get()->num_rows();
+
+      $data['team'] = $this->M_user->get()->num_rows();
+
+      $data['service'] = 5;
+
+      $this->db->where('status !=', 'B');
+      $data['act'] = $this->M_project->get()->num_rows();
+      $this->template('v_dashboard', "Beranda", $data);
     } else {
       $this->session->sess_destroy();
       $data['title'] = "Project Monitoring";

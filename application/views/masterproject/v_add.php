@@ -57,7 +57,7 @@
             <div class="col-sm-4">
               <select class="form-control" required name="tipectr">
                 <option value="">-- Pilih -- </option>
-                <?php foreach ($tipe as $key => $value) { ?>
+                <?php foreach ($tipec as $key => $value) { ?>
                   <option value="<?= $value ?>"><?= $value ?></option>
                 <?php } ?>
               </select>

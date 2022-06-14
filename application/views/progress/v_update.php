@@ -34,13 +34,13 @@
       <section class="widget">
         <div class="widget-body">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Catatan</label>
+            <label class="col-sm-2 col-form-label">Keterangan Progres*</label>
             <div class="col-sm-9">
               <textarea class="form-control" <?= $projectdetail['percentage'] != 0 ? "readonly" : "" ?> required name="note"><?= $projectdetail['note'] ?></textarea>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Lampiran</label>
+            <label class="col-sm-2 col-form-label">Lampiran*</label>
             <div class="col-sm-7">
               <?php if ($projectdetail['percentage'] != 0) { ?>
                 <a target="_blank" href="<?= site_url('project/dwnld/progress/' . $projectdetail['progress_att']) ?>"><?= $projectdetail['progress_att'] ?></a>
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Catatan PBM</label>
+            <label class="col-sm-2 col-form-label">Catatan Pembimbing</label>
             <div class="col-sm-9">
               <textarea class="form-control" name="xn" <?= $projectdetail['percentage'] != 50 ? "readonly" : "" ?>><?= $projectdetail['ext_note'] ?></textarea>
             </div>

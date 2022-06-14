@@ -34,7 +34,7 @@
       <section class="widget">
         <div class="widget-body">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Catatan</label>
+            <label class="col-sm-2 col-form-label">Keterangan Progres</label>
             <div class="col-sm-9">
               <label class="col-form-label"><?= $projectdetail['note'] ?></label>
             </div>
@@ -60,7 +60,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Catatan PBM</label>
+            <label class="col-sm-2 col-form-label">Catatan Pembimbing</label>
             <div class="col-sm-9">
               <label class="col-form-label"><?= $projectdetail['ext_note'] ?></label>
             </div>

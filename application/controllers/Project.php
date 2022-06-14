@@ -88,7 +88,7 @@ class Project extends Core_Controller
     }
 
     $this->db->where('status', $st);
-    // $this->db->or_where('status', 'S');
+    $this->db->or_where('status', 'S');
     $data['projectlist'] = $this->M_project->get()->result_array();
     $this->template("project/v_lap_list", "Verifikasi Laporan Akhir Proyek", $data);
   }

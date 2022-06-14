@@ -12,7 +12,7 @@
             <img src="img/icons/total-sale.svg" alt="" style="padding-top: 15px;">
           </div>
           <div class="d-flex justify-content-center align-items-center col-sm-12">
-            <h3 class="fw-semi-bold pt-1 mb-0"><?= !empty($done) ? $done : 0; ?></h3>
+            <h3 class="fw-semi-bold pt-1 mb-0"><?= !empty($client) ? $client : 0; ?></h3>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
             <img src="img/icons/total-sale.svg" alt="" style="padding-top: 15px;">
           </div>
           <div class="d-flex justify-content-center align-items-center col-sm-12">
-            <h3 class="fw-semi-bold pt-1 mb-0"><?= !empty($done) ? $done : 0; ?></h3>
+            <h3 class="fw-semi-bold pt-1 mb-0"><?= !empty($service) ? $service : 0; ?></h3>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@
             <img src="img/icons/total-sale.svg" alt="" style="padding-top: 15px;">
           </div>
           <div class="d-flex justify-content-center align-items-center col-sm-12">
-            <h3 class="fw-semi-bold pt-1 mb-0"><?= !empty($actv) ? $actv : 0; ?></h3>
+            <h3 class="fw-semi-bold pt-1 mb-0"><?= !empty($act) ? $act : 0; ?></h3>
           </div>
         </div>
       </div>

@@ -24,7 +24,8 @@ class Masterproject extends Core_Controller
 
   public function add()
   {
-    $data['tipe'] = ['MAK Kuliner', 'MAK Report', 'MAK TIK', 'Podcast Ruang Kamad'];
+    $data['tipe'] = ['MAK Kuliner', 'MAK Report', 'MAK TIK', 'Podcast Ruang Kamad', 'Motion Graphic', 'Web Development'];
+    $data['tipec'] = ['Harga Satuan', 'Terima Jadi'];
     $data['pembimbing'] = $this->M_user->getRole("Pembimbing")->result_array();
     $this->template("masterproject/v_add", "Tambah Data Proyek", $data);
   }
@@ -118,7 +119,7 @@ class Masterproject extends Core_Controller
 
   public function edit($id)
   {
-    $data['tipe'] = ['MAK Kuliner', 'MAK Report', 'MAK TIK', 'Podcast Ruang Kamad'];
+    $data['tipe'] = ['MAK Kuliner', 'MAK Report', 'MAK TIK', 'Podcast Ruang Kamad', 'Motion Graphic', 'Web Development'];
     $data['pembimbing'] = $this->M_user->getRole("Pembimbing")->result_array();
     $data['project'] = $this->M_project->get($id)->row_array();
     $this->template("masterproject/v_edit", "Ubah Data Proyek", $data);
