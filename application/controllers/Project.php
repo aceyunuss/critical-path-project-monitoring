@@ -45,6 +45,52 @@ class Project extends Core_Controller
     $data['cpm'] = json_encode($dat);
     $this->template("masterproject/v_view_j", "Lihat Data Proyek", $data);
   }
+
+
+
+  public function editj($id)
+  {
+    $data['project'] = $this->M_project->get($id)->row_array();
+    $data['detail'] = $this->M_project_detail->get("", $id)->result_array();
+    $data['member'] = $this->M_project_member->get("", $id)->result_array();
+    $dat = [];
+    if (!empty($data['detail'])) {
+      foreach ($data['detail'] as $k => $v) {
+        $start = empty($v['predecessor']) ? date("Y, n, d", strtotime($data['project']['start_date'])) : null;
+        $dat[] = [
+          $v['code'],
+          $start,
+          $v['duration'] * 24 * 60 * 60 * 1000,  ##y duration convert to milisecond
+          (int)$v['percentage'],
+          $v['predecessor'], ##y dependency
+        ];
+      }
+    }
+
+    $data['cpm'] = json_encode($dat);
+    $this->template("masterproject/v_edit_j", "Ubah Data Proyek", $data);
+  }
+
+
+  public function go_editj()
+  {
+    $post = $this->input->post();
+
+    $this->db->trans_begin();
+
+    foreach ($post['duration'] as $key => $value) {
+      $this->M_project_detail->update($key, ['duration' => $value]);
+    }
+
+    if ($this->db->trans_status() !== FALSE) {
+      $this->db->trans_commit();
+      echo "<script>alert('Berhasil mengubah jadwal proyek'); location.href='" . site_url('project/editj/' . $post['project_id']) . "';</script>";
+    } else {
+      $this->db->trans_rollback();
+      echo "<script>alert('Gagal mengubah jadwal proyek'); location.href='" . site_url('project/editj/' . $post['project_id']) . "';</script>";
+    }
+  }
+
   public function jadwal()
   {
     $this->db->where('status !=', 'B');
@@ -183,11 +229,11 @@ class Project extends Core_Controller
       $update['final_att'] = $upload;
     }
 
-    if(isset($post['npm'])){
+    if (isset($post['npm'])) {
       $update['npm'] = $post['npm'];
     }
 
-    if(isset($post['nkp'])){
+    if (isset($post['nkp'])) {
       $update['nkp'] = $post['nkp'];
     }
 
