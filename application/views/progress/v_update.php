@@ -71,7 +71,7 @@
 
             <?php if ($projectdetail['percentage'] == 50) { ?>
               <button style="font-size: 16px;" type="submit" class="btn btn-danger btn-sm act" data-stat="n">Tanggapi</button>
-              <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act" data-stat="y">Approved</button>
+              <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act" data-stat="y">Menerima</button>
             <?php } else { ?>
               <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act" data-stat="y">Simpan</button>
             <?php } ?>
