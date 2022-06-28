@@ -19,11 +19,8 @@
             <p class="dropdown-name">Notifications</p>
             <li role="presentation">
               <a role="menuitem" target="_self" href="#" class="dropdown-item">
-                <span class="avatar thumb-sm mr-3">
-                  <img src="img/avatars/tn1.png" alt="..." class="rounded-circle pt-1">
-                </span>
                 <div>
-                  <span> <span class="fw-bold">Jim Tomson </span> removed you to the project <span class="fw-bold"> Flatlogic One</span> </span>
+                  <span> Test notifications <span class="fw-bold"> &nbsp;</span> </span>
                 </div>
                 <div>
                   <span class="dropdown-time">9:15 AM</span>

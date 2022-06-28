@@ -1,8 +1,8 @@
 <nav id="sidebar" class="sidebar" role="navigation">
   <div class="js-sidebar-content">
-    <header class="logo d-md-block">
+    <header class="logo d-md-block" style="background-color: #ff0000;">
       <a href="<?= site_url(); ?>">
-        <img src="<?= base_url('assets/img/logo.jpg') ?>" alt="..." style="width:60px">
+        <img src="<?= base_url('assets/img/logo.png') ?>" alt="..." style="width:60px">
         <b class="fw-bold">MAK</b> Pro</a>
     </header>
     <h5 class="sidebar-nav-title">Menu</h5>

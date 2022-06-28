@@ -7,7 +7,7 @@
   <link href="<?= base_url('assets/css/owl.theme.green.min.css') ?>" rel="stylesheet">
   <link href="<?= base_url('assets/css/ine-awesome.css') ?>" rel="stylesheet">
   <link href="<?= base_url('assets/css/select2.min.css') ?>" rel="stylesheet">
-  <link rel="shortcut icon" href="<?= base_url('assets/img/logo.jpg') ?>">
+  <link rel="shortcut icon" href="<?= base_url('assets/img/logo.png') ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

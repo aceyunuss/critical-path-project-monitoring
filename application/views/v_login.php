@@ -61,7 +61,7 @@
         <div class="col-xl-3 offset-sm-1 offset-0 col-md-6 col-10 my-auto">
           <section class="widget widget-login bg-transparent animated fadeInUp">
             <div class="widget-body">
-              <h2><img src="<?= base_url('assets/img/logo.jpg') ?>" style="height:100px"> MAK Pro</h2>
+              <h2><img src="<?= base_url('assets/img/logo.png') ?>" style="height:100px"> MAK Pro</h2>
               <form class="login-form mt-lg" action="<?= site_url('auth/login') ?>" method="POST">
                 <div role="group" class="form-group">
                   <label for="email" class="d-block">Email</label>
