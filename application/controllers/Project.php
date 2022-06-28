@@ -183,6 +183,14 @@ class Project extends Core_Controller
       $update['final_att'] = $upload;
     }
 
+    if(isset($post['npm'])){
+      $update['npm'] = $post['npm'];
+    }
+
+    if(isset($post['nkp'])){
+      $update['nkp'] = $post['nkp'];
+    }
+
     $project = $this->M_project->get($post['project_id'])->row_array();
 
     switch ($project['status']) {

@@ -122,6 +122,12 @@
 
       <section class="widget">
         <div class="widget-body">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Catatan</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" name="<?= $project['status'] == 'V' ? 'npm' : 'nkp' ?>"></textarea>
+            </div>
+          </div>
           <center>
             <input type="hidden" name="project_id" value="<?= $project['project_id'] ?>">
             <a style="font-size: 16px;" onclick="history.back()" class="btn btn-outline-secondary btn-sm">Kembali</a>

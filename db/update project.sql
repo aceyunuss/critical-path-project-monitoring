@@ -10,3 +10,8 @@ ADD COLUMN `spmk` varchar(255) NULL AFTER `value`;
 
 ALTER TABLE `cpm-db`.`users` 
 ADD COLUMN `pict` varchar(255) NULL AFTER `birthplace`;
+
+
+ALTER TABLE `cpm-db`.`project` 
+ADD COLUMN `npm` text NULL AFTER `spmk`,
+ADD COLUMN `nkp` text NULL AFTER `nkp`;
