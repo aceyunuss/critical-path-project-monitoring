@@ -11,7 +11,7 @@
     <?php include($content . '.php') ?>
 
     <footer class="content-footer hidden-print">
-      Copyrght &copy; Salman Al Farisyi
+      Copyrght &copy; MAK Production 2022
     </footer>
   </main>
 </div>

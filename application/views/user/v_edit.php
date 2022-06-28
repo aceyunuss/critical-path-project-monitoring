@@ -76,7 +76,7 @@
       <section class="widget">
         <div class="widget-body">
           <div class="form-group row">
-            <?php $pict = !empty($usr['pict']) ? "assets/ico/prof.png" : "uploads/user/" . $usr['pict']; ?>
+            <?php $pict = empty($usr['pict']) ? "assets/ico/prof.png" : "uploads/user/" . $usr['pict']; ?>
             <img src="<?= base_url($pict) ?>" class="w-100">
           </div>
           <div class="form-group-row">

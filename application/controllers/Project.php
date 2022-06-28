@@ -294,7 +294,7 @@ class Project extends Core_Controller
     }
 
     $data['cpm'] = json_encode($dat);
-    $this->template("project/v_lap_view", "Laporan Akhir Proyek", $data);
+    $this->template("project/v_lap_view", "Story Project", $data);
   }
 
 

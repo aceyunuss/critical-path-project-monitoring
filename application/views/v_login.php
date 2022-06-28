@@ -99,7 +99,7 @@
       </div>
 
       <footer class="page-footer">
-        &copy; Unsada 2022
+        &copy; MAK Production 2022
       </footer>
     </main>
   </div>
