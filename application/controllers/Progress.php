@@ -68,7 +68,7 @@ class Progress extends Core_Controller
       case '50':
         $dt = [
           'ext_note'      => $post['xn'],
-          'percentage'    => empty($post['xn']) ? 100 : 80
+          'percentage'    => ($post['status'] == "y") ? 100 : 80
         ];
         break;
       case '80':

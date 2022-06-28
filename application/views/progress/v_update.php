@@ -67,11 +67,27 @@
             <input type="hidden" name="project_id" value="<?= $projectdetail['project_id'] ?>">
             <input type="hidden" name="prc" value="<?= $projectdetail['percentage'] ?>">
             <a style="font-size: 16px;" onclick="history.back()" class="btn btn-outline-secondary btn-sm">Kembali</a>
-            &nbsp;&nbsp;
-            <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act">Simpan</button>
+            <input type="hidden" name="status" value="" id="status">
+
+            <?php if ($projectdetail['percentage'] == 50) { ?>
+              <button style="font-size: 16px;" type="submit" class="btn btn-danger btn-sm act" data-stat="n">Tanggapi</button>
+              <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act" data-stat="y">Approved</button>
+            <?php } else { ?>
+              <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act" data-stat="y">Simpan</button>
+            <?php } ?>
           </center>
         </div>
       </section>
     </div>
   </div>
 </form>
+
+<script>
+  $(document).ready(function() {
+    $('.act').click(function() {
+      let stat = $(this).data("stat");
+      $('#status').val(stat)
+    })
+
+  })
+</script>
