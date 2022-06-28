@@ -163,7 +163,8 @@ class Project extends Core_Controller
         break;
     }
 
-    $this->db->where('status', $st);
+    // $this->db->where('status', $st);
+    $data['sta'] = $st;
     $data['projectlist'] = $this->M_project->get()->result_array();
     $this->template("project/v_lap_list", "Laporan Akhir Proyek", $data);
   }
@@ -187,7 +188,8 @@ class Project extends Core_Controller
         break;
     }
 
-    $this->db->where('status', $st);
+    // $this->db->where('status', $st);
+    $data['sta'] = $st;
     $data['projectlist'] = $this->M_project->get()->result_array();
     $this->template("project/v_lap_list", "Approve Laporan Akhir Proyek", $data);
   }
@@ -242,12 +244,15 @@ class Project extends Core_Controller
     switch ($project['status']) {
       case 'P':
         $update['status'] = 'V';
+        $al = "Berhasil Melaporkan Proyek";
         break;
       case 'V':
-        $update['status'] = 'C';
+        $update['status'] = $post['status'] == "y" ? 'C' : 'P';
+        $al = $post['status'] == "y" ? "Laporan Terverifikasi" : "Laporan Ditanggapi";
         break;
       case 'C':
-        $update['status'] = 'S';
+        $update['status'] =  $post['status'] == "y" ? 'S' : 'P';
+        $al = $post['status'] == "y" ? "Laporan Approved" : "Laporan Ditanggapi";
         break;
       default:
         break;
@@ -261,10 +266,10 @@ class Project extends Core_Controller
 
     if ($this->db->trans_status() !== FALSE) {
       $this->db->trans_commit();
-      echo "<script>alert('Berhasil melaporkan proyek'); location.href='" . site_url('project/laporan') . "';</script>";
+      echo "<script>alert('$al'); location.href='" . site_url('project/laporan') . "';</script>";
     } else {
       $this->db->trans_rollback();
-      echo "<script>alert('Gagal melaporkan proyek'); location.href='" . site_url('project/lap_process/' . $post['project_id']) . "';</script>";
+      echo "<script>alert('Gagal'); location.href='" . site_url('project/lap_process/' . $post['project_id']) . "';</script>";
     }
   }
 

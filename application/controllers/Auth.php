@@ -57,7 +57,7 @@ class Auth extends Core_Controller
         'name'    => $user['fullname'],
         'status'  => 'granted',
         'role'    => $user['role'],
-        'pict'    => empty($user['pict']) ? "assets/img/def.png" : "uploads/user/" . $user['pict']
+        'pict'    => empty($user['pict']) ? "assets/ico/prof.png" : "uploads/user/" . $user['pict']
       ];
 
       $this->session->set_userdata($us);

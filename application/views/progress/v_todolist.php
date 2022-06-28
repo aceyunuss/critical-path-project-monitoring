@@ -9,7 +9,7 @@
                 <th>Aksi</th>
                 <th>Deskripsi</th>
                 <th>Proyek</th>
-                <th>Mentor</th>
+                <th>Pembimbing</th>
                 <th>Durasi</th>
                 <th>Status</th>
               </tr>
@@ -45,7 +45,7 @@
                 <th>Aksi</th>
                 <th>Deskripsi</th>
                 <th>Proyek</th>
-                <th>Mentor</th>
+                <th>Pembimbing</th>
                 <th>Durasi</th>
                 <th>Status</th>
               </tr>

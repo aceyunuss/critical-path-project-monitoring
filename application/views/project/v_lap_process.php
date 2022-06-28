@@ -130,9 +130,14 @@
           </div>
           <center>
             <input type="hidden" name="project_id" value="<?= $project['project_id'] ?>">
+            <input type="hidden" name="status" value="" id="status">
             <a style="font-size: 16px;" onclick="history.back()" class="btn btn-outline-secondary btn-sm">Kembali</a>
-            &nbsp;&nbsp;
-            <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act">Simpan</button>
+            <?php if ($project['status'] == 'P') { ?>
+              <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act" data-stat="y">Simpan</button>
+            <?php } else { ?>
+              <button style="font-size: 16px;" type="submit" class="btn btn-danger btn-sm act" data-stat="n">Tanggapi</button>
+              <button style="font-size: 16px;" type="submit" class="btn btn-info btn-sm act" data-stat="y"><?= $project['status'] == 'V' ? "Verifikasi" : "Approved" ?></button>
+            <?php } ?>
           </center>
         </div>
       </section>
@@ -141,3 +146,14 @@
     </div>
   </div>
 </form>
+
+
+<script>
+  $(document).ready(function() {
+    $('.act').click(function() {
+      let stat = $(this).data("stat");
+      $('#status').val(stat)
+    })
+
+  })
+</script>

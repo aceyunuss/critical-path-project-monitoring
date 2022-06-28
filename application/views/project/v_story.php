@@ -9,7 +9,7 @@
                 <th>Aksi</th>
                 <th>Nama Proyek</th>
                 <th>Instansi</th>
-                <th>Mentor</th>
+                <th>Pembimbing</th>
                 <th>Status</th>
                 <th>Progres</th>
               </tr>

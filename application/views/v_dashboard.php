@@ -58,6 +58,9 @@
   </div>
 </div>
 <div class="row">
+
+  <div class="col-xl-2 col-sm-6">
+  </div>
   <div class="col-xl-4 col-sm-6">
     <section class="widget">
       <header>
@@ -96,7 +99,9 @@
       </div>
     </section>
   </div>
-  <div class="col-xl-4 col-sm-6">
+  <div class="col-xl-2 col-sm-6">
+  </div>
+  <!-- <div class="col-xl-4 col-sm-6">
     <section class="widget">
       <header>
         <h5>
@@ -114,5 +119,5 @@
         </div>
       </div>
     </section>
-  </div>
+  </div> -->
 </div>

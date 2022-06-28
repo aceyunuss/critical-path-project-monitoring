@@ -39,13 +39,15 @@
       </li> -->
       <li class="">
         <a href="<?= site_url('') ?>">
-          <i class="sidebar-icon settings-icon"></i>
+          <!-- <i class="sidebar-icon settings-icon"></i> -->
+          <img src="<?= base_url('assets/ico/beranda.png') ?>" width="30px" >
           <span class="icon">Beranda</span>
         </a>
       </li>
       <li class="">
         <a class="collapsed" href="#ta" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
-          <i class="sidebar-icon ui-elements"></i>
+          <!-- <i class="sidebar-icon ui-elements"></i> -->
+          <img src="<?= base_url('assets/ico/data.png') ?>" width="30px" >
           <span class="icon">Data</span>
           <i class="toggle fa fa-angle-down"></i>
         </a>
@@ -56,7 +58,8 @@
       </li>
       <li class="">
         <a class="collapsed" href="#ap" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
-          <i class="sidebar-icon tables-icon"></i>
+          <!-- <i class="sidebar-icon tables-icon"></i> -->
+          <img src="<?= base_url('assets/ico/ap.png') ?>" width="30px" >
           <span class="icon">Active Project</span>
           <i class="toggle fa fa-angle-down"></i>
         </a>
@@ -69,7 +72,8 @@
       </li>
       <li class="">
         <a class="collapsed" href="#la" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
-          <i class="sidebar-icon typography-icon"></i>
+          <!-- <i class="sidebar-icon typography-icon"></i> -->
+          <img src="<?= base_url('assets/ico/la.png') ?>" width="30px" >
           <span class="icon">Laporan Akhir</span>
           <i class="toggle fa fa-angle-down"></i>
         </a>
@@ -80,7 +84,7 @@
       </li>
       <li class="">
         <a href="<?= site_url('project/story') ?>">
-          <i class="sidebar-icon logout-icon"></i>
+        <img src="<?= base_url('assets/ico/story.png') ?>" width="30px" >
           <span class="icon">Story Project</span>
         </a>
       </li>

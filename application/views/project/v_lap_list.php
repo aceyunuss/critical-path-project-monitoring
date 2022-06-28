@@ -9,7 +9,7 @@
                 <th>Aksi</th>
                 <th>Nama Proyek</th>
                 <th>Instansi</th>
-                <th>Mentor</th>
+                <th>Pembimbing</th>
                 <th>Status</th>
                 <th>Progres</th>
               </tr>
@@ -20,7 +20,7 @@
                 <tr>
                   <td>
                     <center>
-                      <?php $st = $value['status'] == 'S' ?  "btn-secondary disabled" : "btn-success"; ?>
+                      <?php $st = $value['status'] == $sta ?  "btn-success" : "btn-secondary disabled"; ?>
                       <a href="<?= site_url('project/lap_view/' . $value['project_id']) ?>" class="btn btn-sm btn-outline-secondary">Lihat</a>
                       <a href="<?= site_url('project/lap_process/' . $value['project_id']) ?>" class="btn btn-sm <?= $st ?>">Proses</a>
                     </center>
