@@ -80,7 +80,7 @@
     data.addRows(cpmchart)
 
     var options = {
-      height: 275,
+      height: 500,
       gantt: {
         criticalPathEnabled: true,
         criticalPathStyle: {
