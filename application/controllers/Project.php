@@ -103,7 +103,7 @@ class Project extends Core_Controller
   {
     $data['project'] = $this->M_project->get($id)->row_array();
     $data['member'] = $this->M_user->getRole("Murid")->result_array();
-    $this->template("project/v_process", "Proses Penentuan Proyek", $data);
+    $this->template("project/v_process", "Input Jadwal Proyek", $data);
   }
 
 
