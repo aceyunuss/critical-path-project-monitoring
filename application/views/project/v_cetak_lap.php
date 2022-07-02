@@ -8,7 +8,7 @@
               <tr>
                 <th>Aksi</th>
                 <th>Nama Proyek</th>
-                <th>Instansi</th>
+                <th>Pemilik Proyek</th>
                 <th>Pembimbing</th>
                 <th>Status</th>
                 <th>Progres</th>
@@ -25,7 +25,7 @@
                     </center>
                   </td>
                   <td><?= $value['project_name'] ?></td>
-                  <td><?= $value['instance'] ?></td>
+                  <td><?= $value['owner'] ?></td>
                   <td><?= $value['mentor_name'] ?></td>
                   <td>
                     <?php $bg = ($value['status'] == "B" ? "warning" : ($value['status'] == "D" ? "primary" : "success")) ?>

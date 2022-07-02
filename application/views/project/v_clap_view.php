@@ -45,9 +45,9 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Instansi</label>
+          <label class="col-sm-2 col-form-label">Pemilik Proyek</label>
           <div class="col-sm-4">
-            <label class="col-form-label"><?= $project['instance'] ?></label>
+            <label class="col-form-label"><?= $project['owner'] ?></label>
           </div>
           <label class="col-sm-2 col-form-label">Murid</label>
           <div class="col-sm-4">
