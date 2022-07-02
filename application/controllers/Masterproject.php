@@ -68,10 +68,10 @@ class Masterproject extends Core_Controller
 
     if ($this->db->trans_status() !== FALSE) {
       $this->db->trans_commit();
-      // echo "<script>alert('Berhasil menambah proyek'); location.href='" . site_url('masterproject') . "';</script>";
+      echo "<script>alert('Berhasil menambah proyek'); location.href='" . site_url('masterproject') . "';</script>";
     } else {
       $this->db->trans_rollback();
-      // echo "<script>alert('Gagal menambah proyek'); location.href='" . site_url('masterproject/add') . "';</script>";
+      echo "<script>alert('Gagal menambah proyek'); location.href='" . site_url('masterproject/add') . "';</script>";
     }
   }
 
