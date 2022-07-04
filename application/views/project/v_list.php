@@ -23,6 +23,7 @@
                       <?php $prc = (is_null($value['pm']) && is_null($value['pd'])) ?  "btn-success" : "btn-secondary disabled"; ?>
                       <a href="<?= site_url('masterproject/view/' . $value['project_id']) ?>" class="btn btn-sm btn-outline-secondary">Lihat</a>
                       <a href="<?= site_url('project/process/' . $value['project_id']) ?>" class="btn btn-sm <?= $prc; ?>">Proses</a>
+                      <a href="<?= site_url('project/editj/' . $value['project_id']) ?>" class="btn btn-sm <?= $value['status'] == 'D' ? 'btn-success' : 'btn-secondary disabled' ?>">Ubah</a>
                     </center>
                   </td>
                   <td><?= $value['project_name'] ?></td>

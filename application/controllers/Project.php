@@ -17,7 +17,7 @@ class Project extends Core_Controller
 
   public function index()
   {
-    $this->db->where('status', 'B');
+    // $this->db->where_in('status', ['B', 'D']);
     $data['projectlist'] = $this->M_project->get()->result_array();
     $this->template("project/v_list", "Proyek", $data);
   }
@@ -131,7 +131,7 @@ class Project extends Core_Controller
     }
 
     $this->db->trans_begin();
-
+    $this->M_project->update($post['project_id'], ['status' => "D"]);
     $this->M_project_detail->insert($dt);
     $this->M_project_member->insert($mb);
 
