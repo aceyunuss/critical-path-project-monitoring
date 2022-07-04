@@ -39,7 +39,7 @@ class Core_Controller extends CI_Controller
 
     $config['upload_path'] = $dir;
     $config['allowed_types'] = '*';
-    $config['max_size']     = 10240;
+    $config['max_size']     = 50000;
     // $config['max_widht'] 	= 1000;
     // $config['max_height']  	= 1000;
     // $config['file_name'] 		= round(microtime(true)*1000);
