@@ -38,7 +38,7 @@ class Core_Controller extends CI_Controller
     }
 
     $config['upload_path'] = $dir;
-    $config['allowed_types'] = 'jpg|gif|png|doc|docx|xls|xlsx|ppt|pptx|pdf|jpeg|zip|rar|tgz|7zip|tar';
+    $config['allowed_types'] = '*';
     $config['max_size']     = 10240;
     // $config['max_widht'] 	= 1000;
     // $config['max_height']  	= 1000;
