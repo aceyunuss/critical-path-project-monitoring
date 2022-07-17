@@ -224,6 +224,7 @@ class Project extends Core_Controller
     $post = $this->input->post();
 
     $update = [];
+    $update['nkp'] = null;
 
     if (!empty($_FILES['fnl']['name'])) {
       $this->session->set_userdata("dir_upload", "project");

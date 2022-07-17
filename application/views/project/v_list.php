@@ -34,6 +34,7 @@
                     <span class="badge bg-<?= $bg ?>"><?= $value['stat'] ?></span>
                   </td>
                   <td>
+                    <?= $value['progress'] == 100 ? "<p>Lengkap</p>" : "" ?>
                     <abbr title="<?= $value['progress'] ?> %">
                       <div class="progress-bar progress-sm bg-<?= $value['progress'] <= 25 ? 'danger' : ($value['progress'] <= 50 ? 'warning' : 'primary') ?> js-progress-animate" style="width: <?= $value['progress'] ?>%;" data-width="<?= $value['progress'] ?>"></div>
                     </abbr>
