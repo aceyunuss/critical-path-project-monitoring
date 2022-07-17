@@ -66,6 +66,17 @@
               <input type="number" min="0" maxlength="255" class="form-control" name="phone" required value="<?= $usr['phone'] ?>">
             </div>
           </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Kelas</label>
+            <div class="col-sm-8">
+              <select class="form-control" name="class">
+                <option value="">-- Pilih -- </option>
+                <?php foreach ($class as $key => $value) { ?>
+                  <option <?= $value['cls_id'] ==  $usr['cls_id'] ? "selected" : ""; ?> value="<?= $value['cls_id'] ?>"><?= $value['cls_name'] ?></option>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
           <br>
 
         </div>

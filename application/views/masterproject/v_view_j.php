@@ -94,7 +94,7 @@
           <label class="col-sm-2 col-form-label">Murid</label>
           <div class="col-sm-4">
             <?php foreach ($member as $k => $v) { ?>
-              <li><?= $v['member_name'] ?></li>
+              <li><?= $v['member_name'] . " (" . $v['cls_name'] . ")" ?></li>
             <?php } ?>
           </div>
         </div>

@@ -53,7 +53,7 @@
           <div class="col-sm-4">
             <label class="col-form-label">
               <?php foreach ($member as $k => $v) { ?>
-                <li><?= $v['member_name'] ?></li>
+                <li><?= $v['member_name'] . " (" . $v['cls_name'] . ")" ?></li>
               <?php } ?>
             </label>
           </div>

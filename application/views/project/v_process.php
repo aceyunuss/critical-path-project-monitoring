@@ -65,7 +65,7 @@
               <span id="member-container">
                 <select required class="select2 js-example-responsive" multiple="multiple" style="width: 100%;" id="member" name="member[]">
                   <?php foreach ($member as $key => $value) { ?>
-                    <option value="<?= $value['user_id'] ?>"> <?= $value['fullname'] ?> </option>
+                    <option value="<?= $value['user_id'] ?>"> <?= $value['fullname'] . " (" . $value['cls_name'] . ")" ?> </option>
                   <?php } ?>
                 </select>
               </span>

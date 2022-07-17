@@ -29,6 +29,7 @@ class User extends Core_Controller
   public function add()
   {
     $data['role'] = ['Murid', 'Pembimbing', 'Manajer Proyek', 'Kepala Madrasah'];
+    $data['class'] = $this->M_user->getClass()->result_array();
     $this->template("user/v_add", "Tambah Data User", $data);
   }
 
@@ -48,6 +49,9 @@ class User extends Core_Controller
       'password'      => md5($post['password']),
     ];
 
+    if (!empty($post['class'])) {
+      $dt['cls_id'] = $post['class'];
+    }
     
     if (!empty($_FILES['pict']['name'])) {
       $this->session->set_userdata("dir_upload", "user");
@@ -88,6 +92,7 @@ class User extends Core_Controller
 
   public function edit($id)
   {
+    $data['class'] = $this->M_user->getClass()->result_array();
     $data['usr'] = $this->M_user->get($id)->row_array();
     $data['role'] = ['Murid', 'Pembimbing', 'Manajer Proyek', 'Kepala Madrasah'];
     $this->template("user/v_edit", "Ubah Data User", $data);
@@ -111,6 +116,10 @@ class User extends Core_Controller
 
     if (!empty($post['password'])) {
       $dt['password'] = md5($post['password']);
+    }
+
+    if (!empty($post['class'])) {
+      $dt['cls_id'] = $post['class'];
     }
 
     if (!empty($_FILES['pict']['name'])) {

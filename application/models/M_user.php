@@ -19,6 +19,7 @@ class M_user extends CI_Model
     if (!empty($id)) {
       $this->db->where("user_id", $id);
     }
+    $this->db->join("class", "class.cls_id=users.cls_id", "left");
     return $this->db->get("users");
   }
 
@@ -40,5 +41,13 @@ class M_user extends CI_Model
   {
     $this->db->where('role', $role);
     return $this->get();
+  }
+
+  public function getClass($id = "")
+  {
+    if (!empty($id)) {
+      $this->db->where("cls_id", $id);
+    }
+    return $this->db->get("class");
   }
 }
