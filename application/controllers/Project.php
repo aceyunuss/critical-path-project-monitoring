@@ -253,6 +253,7 @@ class Project extends Core_Controller
       case 'C':
         $update['status'] =  $post['status'] == "y" ? 'S' : 'P';
         $al = $post['status'] == "y" ? "Laporan Approved" : "Laporan Ditanggapi";
+        $update['end_date'] =  $post['status'] == "y" ?  date('Y-m-d') : NULL;
         break;
       default:
         break;
