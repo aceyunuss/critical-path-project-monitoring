@@ -25,7 +25,7 @@
                   </td>
                   <td><?= $value['project_name'] ?></td>
                   <td><?= $value['owner'] ?></td>
-                  <td><?= $value['mentor_name'] ?></td> -->
+                  <td><?= $value['mentor_name'] ?></td>
                   <td>
                     <?php $bg = ($value['status'] == "B" ? "warning" : ($value['status'] == "D" ? "primary" : "success")) ?>
                     <center>

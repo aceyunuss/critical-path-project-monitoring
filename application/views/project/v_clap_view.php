@@ -35,10 +35,14 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Tanggal Selsai</label>
-          <div class="col-sm-4">
-            <label class="col-form-label"><?= substr($project['end_date'], 0, 10) ?></label>
-          </div>
+          <?php if (!empty($project['end_date'])) { ?>
+            <label class="col-sm-2 col-form-label">Tanggal Selesai</label>
+            <div class="col-sm-4">
+              <label class="col-form-label"><?= substr($project['end_date'], 0, 10) ?></label>
+            </div>
+          <?php } else { ?>
+            <div class="col-sm-6"></div>
+          <?php } ?>
           <label class="col-sm-2 col-form-label">Progres</label>
           <div class="col-sm-4">
             <label class="col-form-label"><?= $project['progress'] ?> %</label>
@@ -68,7 +72,7 @@
             <label class="col-form-label"> <a target="_blank" href="<?= site_url('project/dwnld/project/' . $project['final_att']) ?>"><?= $project['final_att'] ?></a></label>
           </div>
         </div>
-        
+
       </div>
     </section>
 
