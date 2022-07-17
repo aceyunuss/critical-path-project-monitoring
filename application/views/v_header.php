@@ -1,4 +1,4 @@
-<nav class="page-controls navbar navbar-dashboard">
+<nav class="page-controls navbar navbar-dashboard" style="position: fixed;">
   <div class="container-fluid">
     <div class="navbar-header mobile-hidden">
       <ul class="nav navbar-nav toggle-sidebar">
