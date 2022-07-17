@@ -10,6 +10,7 @@
                 <th>Nama Proyek</th>
                 <th>Pemilik Proyek</th>
                 <th>Pembimbing</th>
+                <th>Status</th>
                 <th>Progres</th>
               </tr>
             </thead>
@@ -29,12 +30,12 @@
                   <td><?= $value['mentor_name'] ?></td>
                   <td>
                     <?php $bg = ($value['status'] == "B" ? "warning" : ($value['status'] == "D" ? "primary" : "success")) ?>
-                    <center>
-                      <span class="badge bg-<?= $bg ?>"><?= $value['stat'] ?></span></p>
-                      <abbr title="<?= $value['progress'] ?> %">
-                        <div class="progress-bar progress-sm bg-<?= $value['progress'] <= 25 ? 'danger' : ($value['progress'] <= 50 ? 'warning' : 'primary') ?> js-progress-animate" style="width: <?= $value['progress'] ?>%;" data-width="<?= $value['progress'] ?>"></div>
-                      </abbr>
-                    </center>
+                    <span class="badge bg-<?= $bg ?>"><?= $value['stat'] ?></span>
+                  </td>
+                  <td>
+                    <abbr title="<?= $value['progress'] ?> %">
+                      <div class="progress-bar progress-sm bg-<?= $value['progress'] <= 25 ? 'danger' : ($value['progress'] <= 50 ? 'warning' : 'primary') ?> js-progress-animate" style="width: <?= $value['progress'] ?>%;" data-width="<?= $value['progress'] ?>"></div>
+                    </abbr>
                   </td>
                 </tr>
               <?php } ?>
