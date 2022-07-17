@@ -36,6 +36,15 @@ class Progress extends Core_Controller
     $this->template("progress/v_todolist", "Update Progres Proyek", $data);
   }
 
+  
+  public function list()
+  {
+    $this->db->order_by('percentage', 'asc');
+    $data['all'] = $this->M_project_detail->get()->result_array();
+
+    $this->template("progress/v_li", "Story Progress", $data);
+  }
+
 
   public function update($id)
   {

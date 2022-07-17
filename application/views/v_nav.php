@@ -67,6 +67,12 @@
       <?php } ?>
       <?php if ($rl == "Kepala Madrasah") { ?>
         <li class="">
+          <a href="<?= site_url('progress/list') ?>">
+            <img src="<?= base_url('assets/ico/pro.png') ?>" width="30px">
+            <span class="icon">Story Progress</span>
+          </a>
+        </li>
+        <li class="">
           <a href="<?= site_url('project/story') ?>">
             <img src="<?= base_url('assets/ico/story.png') ?>" width="30px">
             <span class="icon">Story Project</span>
